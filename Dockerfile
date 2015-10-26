@@ -1,10 +1,10 @@
 FROM busybox
 
-ENV VAULT_VERSION=0.3.0
-ENV VAULT_SHA256=30b8953e98059d1e8d97f6a164aa574a346a58caf9c5c74a911056f42fbef4d5
+ENV VAULT_VERSION=0.3.1
+ENV VAULT_SHA256SUM=4005f0ae1bd88ad2676859430209129ed13bc3ade6b64fcf40cc3a6d4d9469e7
 RUN \
   wget http://dl.bintray.com/mitchellh/vault/vault_${VAULT_VERSION}_linux_amd64.zip &&\
-  echo "${VAULT_SHA256}  vault_${VAULT_VERSION}_linux_amd64.zip" | sha256sum -c - &&\
+  echo "${VAULT_SHA256SUM}  vault_${VAULT_VERSION}_linux_amd64.zip" | sha256sum -c - &&\
   unzip vault_${VAULT_VERSION}_linux_amd64.zip &&\
   rm vault_${VAULT_VERSION}_linux_amd64.zip &&\
   mv vault /usr/bin
